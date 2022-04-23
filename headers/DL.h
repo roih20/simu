@@ -59,3 +59,20 @@ void destroyList (Node**L) {
     free(temp);
   }
 }
+
+void insertarAlFinal (Node **L, int value) {
+  Node* temp = (Node*) crearNodo();
+  temp->data = value;
+  temp->next = NULL;
+
+  if (*L == NULL) {
+    *L = temp;
+  } else {
+    Node* Lcopy = *L;
+    while (Lcopy->next != NULL) {
+      Lcopy = Lcopy->next;
+    }
+    Lcopy->next = temp;
+  }
+
+}
